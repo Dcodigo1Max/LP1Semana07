@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Runtime.Intrinsics.X86;
 using System.Security.Cryptography.X509Certificates;
+using System.Threading;
 
 namespace ColorSpheres
 {
@@ -55,6 +57,49 @@ namespace ColorSpheres
             return grey;
         }
 
+        
+    } 
 
-    }  
+    public class Spheres
+    {
+        private string cor;
+        private float raio;
+        private int Tthrown;
+
+        
+        
+        
+        public Spheres(string cor, float raio)
+        {
+            this.cor=cor;
+            this.raio=raio;
+            Tthrown=0;
+        }   
+
+
+        public void Pop()
+        {
+            raio=0;
+
+        }
+
+        public void Throw()
+        {
+           // count += n
+        }
+
+
+        public void GetTimesThrown()
+        {
+           // return count;
+
+        }
+
+
+
+    }
+
+
+
+
 }
