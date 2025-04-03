@@ -3,17 +3,17 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace ColorSpheres
 {
-    public class Program
+    public class Color
     {
-        private byte RED = 50;
-        private byte GREEN =100;
-        private byte BLUE = 120;
-        private byte Alpha;
+        private byte RED = 100;
+        private byte GREEN = 40;
+        private byte BLUE = 60;
+        private byte Alpha = 255;
+        private byte grey;
 
-        public Program(byte RED, byte BLUE, byte GREEN, byte Alpha)
+        public Color(byte RED, byte BLUE, byte GREEN, byte Alpha)
         {
             this.RED=RED;
-            RED =Convert.ToByte(255);
             this.BLUE=BLUE;
             this.GREEN=GREEN;
             this.Alpha=Alpha;
@@ -22,7 +22,7 @@ namespace ColorSpheres
 
         private static void Main(string[] args)
         {           
-            
+           
             
            
         }
@@ -48,6 +48,12 @@ namespace ColorSpheres
             return Alpha;
         }
 
+
+        public byte GetGrey()
+        {
+            grey = Convert.ToByte((RED + BLUE + GREEN)/3);
+            return grey;
+        }
 
 
     }  
