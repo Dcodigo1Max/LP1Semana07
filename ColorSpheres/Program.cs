@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.Intrinsics.X86;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
@@ -34,11 +35,10 @@ namespace ColorSpheres
 
         private static void Main(string[] args)
         {  
-           /*      
-           Console.WriteLine("Spawn sphere");
-           Color red = Convert.ToString();
-           red = Console.ReadLine();
-           */
+                 
+           //Console.ReadLine(Convert.ToString(red));
+           
+           
            
         }
     
@@ -91,12 +91,16 @@ namespace ColorSpheres
         {
             raio=0;
             Console.WriteLine("Esfera foi furada");
+            
         }
 
         public void Throw()
         {
+           if (raio>0)
+           {
+             Tthrown++;
+           }
            
-           //count?
         }
 
 
@@ -105,7 +109,7 @@ namespace ColorSpheres
            // return count;
 
         }
-
+    
 
 
     }
