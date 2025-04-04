@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.Tracing;
 using System.Dynamic;
 
 namespace MyRoguelike
@@ -8,6 +9,8 @@ namespace MyRoguelike
         private int xp;
         private float health;
         private string Name{get;}
+
+        private float MaxHealth{get;} = 140;
 
 
         public Hero(string Name)
@@ -52,6 +55,18 @@ namespace MyRoguelike
                 }
 
             }
+        }
+
+        public MaxHealth(float MaxHealth)
+        {
+            MaxHealth = 100 +(Level -1) * 20;
+            return MaxHealth;
+        }
+
+
+        public void TakeDamage(float damage)
+        {
+            
         }
 
 
