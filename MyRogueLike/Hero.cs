@@ -60,12 +60,13 @@ namespace MyRoguelike
         public MaxHealth(float MaxHealth)
         {
             MaxHealth = 100 +(Level -1) * 20;
-            return MaxHealth;
+        
         }
 
 
         public void TakeDamage(float damage)
         {
+            Health = health - damage;
             
         }
 
