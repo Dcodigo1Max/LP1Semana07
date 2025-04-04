@@ -26,7 +26,7 @@ namespace MyRoguelike
             }
             set
             {
-                xp = value; 
+                xp = XP; 
             }
         }
         
