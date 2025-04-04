@@ -2,79 +2,55 @@
 
 namespace PlayerStats
 {
-    public class Player 
+    public class Program
     {
-        public float highScore {get; private set;}
-        public int playedGames {get; private set;}
-
-        public int wonGames {get; private set;}
-
-
-        public Player(string name)
+        private static void Main()
         {
-            Name = name;
-            highScore = 0;
-            playedGames = 0;
-            wonGames = 0;
-        }
+            Player[] players = {
+                new Player("Ana"),
+                new Player("Zé"),
+                new Player("Doesn't play")
+            };
 
+            players[0].PlayGame(false);
+            players[0].PlayGame(true);
+            players[0].PlayGame(true);
+            players[0].PlayGame(false);
+            players[0].PlayGame(false);
+            players[0].PlayGame(true);
+            players[0].HighScore = 123;
+            players[0].HighScore = 40;
 
-        public float HighScore
-        {
-            get
-            { 
-                return highScore; 
-            }
-            set
+            players[1].PlayGame(true);
+            players[1].PlayGame(true);
+            players[1].HighScore = 12;
+            players[1].HighScore = 67;
+            players[1].HighScore = 91;
+            players[1].HighScore = 32;
+
+            foreach (Player player in players)
             {
-                if (value > highScore)
-                {
-                    highScore = value;
-                }
+                Console.WriteLine($" Player name : {player.Name}");
+                Console.WriteLine($"    Win rate : {player.WinRate}");
+                Console.WriteLine($"  High score : {player.HighScore}");
+                Console.WriteLine("--------------------------------");
             }
+
+            // Output deve ser:
+            //
+            //  Player name : Ana
+            //     Win rate : 0.5
+            //   High score : 123
+            // --------------------------------
+            //  Player name : Zé
+            //     Win rate : 1
+            //   High score : 91
+            // --------------------------------
+            //  Player name : Doesn't play
+            //     Win rate : 0
+            //   High score : 0
+            // --------------------------------
+
         }
-
-
-        public string Name {get;}
-
-        public float WinRate
-        {
-            get 
-            {
-                return (float) wonGames / playedGames; 
-            }
-            set
-            {
-                if (playedGames == 0)
-                WinRate = 0;
-            }
-        }
-
-
-        public void PlayGame(bool win)
-        {
-            playedGames++;
-            if(win)
-            {
-                wonGames++;
-            }
-        }
-
-
-
-        private static void Main(string[] args)
-        {
-            Console.WriteLine("Hello LP1!");
-        }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     }
 }
