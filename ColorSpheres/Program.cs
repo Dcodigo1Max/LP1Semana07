@@ -7,55 +7,65 @@ namespace ColorSpheres
 {
     public class Color
     {
-        private byte RED = 100;
-        private byte GREEN = 40;
-        private byte BLUE = 60;
-        private byte Alpha = 255;
+        private string name;
+        private byte red = 50;
+        private byte green = 100;
+        private byte blue = 200;
+        private byte alpha = 255;
         private byte grey;
 
-        public Color(byte RED, byte BLUE, byte GREEN, byte Alpha)
+
+       /* public ParaColor(string name)
         {
-            this.RED=RED;
-            this.BLUE=BLUE;
-            this.GREEN=GREEN;
-            this.Alpha=Alpha;
+            this.name=name;
+            
+        }*/
+
+        public Color(byte red, byte blue, byte green, byte alpha)
+        {
+            this.red=red;
+            this.blue=blue;
+            this.green=green;
+            this.alpha=alpha;
 
         }   
 
+
+
         private static void Main(string[] args)
-        {           
-           
-            
+        {  
+           /*      
+           Console.WriteLine("Spawn sphere");
+           Color red = Convert.ToString();
+           red = Console.ReadLine();
+           */
            
         }
     
 
         public byte GetRED()
         {
-            return RED;
+            return red;
         }
 
         public byte GetBLUE()
         {
-            return BLUE;
+            return blue;
         }
 
         public byte GetGREEN()
         {
-            return GREEN;
+            return green;
         }
 
         public byte GetAlpha()
         {
-            return Alpha;
+            return alpha;
         }
 
 
-        public byte GetGrey()
-        {
-            grey = Convert.ToByte((RED + BLUE + GREEN)/3);
-            return grey;
-        }
+        public byte Grey => grey = Convert.ToByte((red + blue + green)/3);
+            
 
         
     } 
@@ -80,12 +90,13 @@ namespace ColorSpheres
         public void Pop()
         {
             raio=0;
-
+            Console.WriteLine("Esfera foi furada");
         }
 
         public void Throw()
         {
-           // count += n
+           
+           //count?
         }
 
 
